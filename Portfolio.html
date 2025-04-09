@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jashan Deep | Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Styles -->
+  <style>
+    /* Color Variables */
+    :root {
+      --bg-color: #0d1117;
+      --card-bg: #161b22;
+      --accent: #58a6ff;
+      --text: #c9d1d9;
+      --muted: #8b949e;
+
+      --light-bg: #f8f9fb;
+      --light-card: #ffffff;
+      --light-text: #1f1f1f;
+      --light-muted: #666;
+      --light-accent: #007bff;
+    }
+
+    /* Light Mode Styles */
+    body.light-mode {
+      background-color: var(--light-bg);
+      color: var(--light-text);
+    }
+
+    body.light-mode .card {
+      background-color: var(--light-card);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    body.light-mode h1,
+    body.light-mode h2,
+    body.light-mode h3 {
+      color: var(--light-accent);
+    }
+
+    body.light-mode p {
+      color: var(--light-muted);
+    }
+
+    body.light-mode .theme-toggle {
+      background: var(--light-card);
+      color: var(--light-text);
+      border: 1px solid #ccc;
+    }
+
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text);
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    .info {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--card-bg);
+      border: none;
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section-title {
+      color: var(--accent);
+      margin: 2rem 0 1rem;
+      font-size: 1.8rem;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+
+    body.light-mode .section-title {
+      color: var(--light-accent);
+      border-bottom: 1px solid var(--light-accent);
+    }
+
+    /* Card Layout */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.3);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    body.light-mode .card h3 {
+      color: var(--light-accent);
+    }
+
+    .card p {
+      color: var(--muted);
+    }
+
+    body.light-mode .card p {
+      color: var(--light-muted);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Theme Switch Button -->
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+
+  <!-- Profile Header -->
+  <header>
+    <img src="IMG_7208.jpg" alt="Jashan Deep">
+    <h1>Jashan Deep</h1>
+    <p class="info">📞 +91 8005530683 | ✉️ jashandeepsinghgill1305@gmail.com</p>
+  </header>
+
+  <!-- Education Section -->
+  <section>
+    <h2 class="section-title">📜 Education</h2>
+    <div class="card">
+      <p>Class 12th, 2025 | Seth G.L. Bihani Senior Secondary S.D School</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section>
+    <h2 class="section-title">🚀 Projects</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>AI Productivity Toolkit</h3>
+        <p>Developed 50+ custom AI prompts to streamline writing and data tasks</p>
+      </div>
+
+      <div class="card">
+        <h3>Tech Repair Side Hustle</h3>
+        <p>Diagnosed and fixed 15+ devices – malware removal, OS reinstalls, hardware upgrades</p>
+      </div>
+
+      <div class="card">
+        <h3>Speed Typing Grind</h3>
+        <p>Improved from 40 WPM to 80+ WPM through daily practice</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript Theme Toggle Function -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+
+</html>
